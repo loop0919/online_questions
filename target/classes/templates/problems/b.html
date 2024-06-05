@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../../static/css/style.css" th:href="@{/css/style.css}"/>
+    <title>B - 1 + 2 + ... + 100 - Online Problems</title>
+</head>
+<body>
+    <header>
+        <h2>Online Problems</h2>
+    </header>
+    <main>
+        <div class="container">
+            <div class="problem-statement">
+                <h1>B - 1 + 2 + ... + 100</h1>
+                <ul>
+                    <li>Level: ★★☆☆☆</li>
+                    <li>Point: 100 pts</li>
+                </ul>
+                <h2>問題文</h2>
+                <p>1 以上 100 以下のすべての整数を足し合わせた値を求めてください。</p>
+            </div>
+            <div class="submit">
+                <h2>提出</h2>
+                <form method="post" th:action="@{problems/b/submit}">
+                    <input type="text" name="answer" placeholder="答えを入力"/>
+                    <input type="submit" value="提出"/>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
