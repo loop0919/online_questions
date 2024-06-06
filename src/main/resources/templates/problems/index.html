@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../static/css/style.css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/bootstrap-theme.min.css}"/>
     <title>問題一覧 - Online Problems</title>
 </head>
 <body>
@@ -13,11 +15,11 @@
     <main>
         <div class="container">
             <h1>問題一覧</h1>
-            <button onclick="location.href='/problems/a'" >
+            <button onclick="location.href='/problems/problem_a'" >
                 <h2>A - The First Problem</h2>
                 <p>Level: ★☆☆☆☆</p>
             </button>
-            <button onclick="location.href='/problems/b'" >
+            <button onclick="location.href='/problems/problem_b'" >
                 <h2>B - 1 + 2 + ... + 100</h2>
                 <p>Level: ★★☆☆☆</p>
             </button>

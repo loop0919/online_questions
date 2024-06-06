@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/bootstrap-theme.min.css}"/>
+    <title>ログインフォーム - Online Problems</title>
+</head>
+<body>
+    <header>
+        <h2>Online Problems</h2>
+    </header>
+    <main>
+        <div class="container">
+            <form class="form-signin" method="post" th:action="@{/login}">
+                <h2 class="form-signin-handing">ログインフォーム</h2>
+                <div th:if="${param.error}" class="alert alert-danger">
+                    ユーザー名またはパスワードが正しくありません。
+                </div>
+                <input type="text" class="form-control" name="username" placeholder="Username" required="required" autofocus="autofocus"/>
+                <input type="password" class="form-control" name="password" placeholder="Password" required="required"/>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
