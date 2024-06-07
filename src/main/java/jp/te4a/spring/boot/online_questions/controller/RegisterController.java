@@ -30,7 +30,7 @@ public class RegisterController {
     }
 
     @PostMapping(path="create")
-    String create(@Validated UserForm form, BindingResult result, Model model) {
+    String create(@Validated @ModelAttribute UserForm form, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return list(model);
         }
