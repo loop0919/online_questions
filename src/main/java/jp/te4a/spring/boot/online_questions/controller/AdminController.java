@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.te4a.spring.boot.online_questions.form.ProblemForm;
-import jp.te4a.spring.boot.online_questions.service.ProblemsService;
+import jp.te4a.spring.boot.online_questions.service.ProblemsServiceI;
 
 @Controller
 @RequestMapping(path="admin")
 public class AdminController {
     @Autowired
-    ProblemsService problemsService;
+    ProblemsServiceI problemsService;
     
     @ModelAttribute
     ProblemForm setUpForm() {

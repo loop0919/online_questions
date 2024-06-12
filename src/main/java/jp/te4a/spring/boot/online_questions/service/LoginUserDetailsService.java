@@ -1,7 +1,6 @@
 package jp.te4a.spring.boot.online_questions.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +9,7 @@ import jp.te4a.spring.boot.online_questions.repository.UserRepository;
 import jp.te4a.spring.boot.online_questions.security.LoginUserDetails;
 
 @Service
-public class LoginUserDetailsService implements UserDetailsService {
+public class LoginUserDetailsService implements LoginUserDetailsServiceI {
     @Autowired
     UserRepository userRepository;
 

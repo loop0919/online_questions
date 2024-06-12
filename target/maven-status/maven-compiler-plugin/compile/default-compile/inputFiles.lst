@@ -15,5 +15,8 @@ c:\Users\210729\Desktop\r06_dev\workspace_maven\online_questions\src\main\java\j
 c:\Users\210729\Desktop\r06_dev\workspace_maven\online_questions\src\main\java\jp\te4a\spring\boot\online_questions\repository\UserRepository.java
 c:\Users\210729\Desktop\r06_dev\workspace_maven\online_questions\src\main\java\jp\te4a\spring\boot\online_questions\security\LoginUserDetails.java
 c:\Users\210729\Desktop\r06_dev\workspace_maven\online_questions\src\main\java\jp\te4a\spring\boot\online_questions\service\LoginUserDetailsService.java
+c:\Users\210729\Desktop\r06_dev\workspace_maven\online_questions\src\main\java\jp\te4a\spring\boot\online_questions\service\LoginUserDetailsServiceI.java
 c:\Users\210729\Desktop\r06_dev\workspace_maven\online_questions\src\main\java\jp\te4a\spring\boot\online_questions\service\ProblemsService.java
+c:\Users\210729\Desktop\r06_dev\workspace_maven\online_questions\src\main\java\jp\te4a\spring\boot\online_questions\service\ProblemsServiceI.java
 c:\Users\210729\Desktop\r06_dev\workspace_maven\online_questions\src\main\java\jp\te4a\spring\boot\online_questions\service\UserService.java
+c:\Users\210729\Desktop\r06_dev\workspace_maven\online_questions\src\main\java\jp\te4a\spring\boot\online_questions\service\UserServiceI.java

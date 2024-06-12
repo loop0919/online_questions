@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.te4a.spring.boot.online_questions.form.UserForm;
-import jp.te4a.spring.boot.online_questions.service.UserService;
+import jp.te4a.spring.boot.online_questions.service.UserServiceI;
 
 @Controller
 @RequestMapping("register")
 public class RegisterController {
     @Autowired
-    UserService userService;
+    UserServiceI userService;
 
     @ModelAttribute
     UserForm setUpForm() {

@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.te4a.spring.boot.online_questions.form.SubmissionForm;
-import jp.te4a.spring.boot.online_questions.service.ProblemsService;
+import jp.te4a.spring.boot.online_questions.service.ProblemsServiceI;
 
 
 @Controller
 @RequestMapping(path="/problems")
 public class ProblemsController {
     @Autowired
-    ProblemsService problemsService;
+    ProblemsServiceI problemsService;
 
     @ModelAttribute
     SubmissionForm setUpForm() {

@@ -14,7 +14,7 @@ import jp.te4a.spring.boot.online_questions.form.SubmissionForm;
 import jp.te4a.spring.boot.online_questions.repository.ProblemsRepository;
 
 @Service
-public class ProblemsService {
+public class ProblemsService implements ProblemsServiceI{
     @Autowired
     ProblemsRepository problemsRepository;
 

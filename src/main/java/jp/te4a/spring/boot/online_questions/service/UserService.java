@@ -10,7 +10,7 @@ import jp.te4a.spring.boot.online_questions.form.UserForm;
 import jp.te4a.spring.boot.online_questions.repository.UserRepository;
 
 @Service
-public class UserService {
+public class UserService implements UserServiceI{
     @Autowired
     UserRepository userRepository;
 
