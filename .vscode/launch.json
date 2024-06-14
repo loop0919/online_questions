@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-OnlineQuestionsApplication<online_questions>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "jp.te4a.spring.boot.online_questions.OnlineQuestionsApplication",
+            "projectName": "online_questions",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

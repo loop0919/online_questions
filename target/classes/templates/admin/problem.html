@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/bootstrap-theme.min.css}"/>
+    <title>ログインフォーム - Online Problems</title>
+    <!-- MathJax -->
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+</head>
+<body>
+    <header th:replace="~{components/header :: header}"></header>
+    <main>
+        <div class="container mt-5 mb-5">
+            <h1>問題作成</h1>
+            <form th:action="@{/admin/problem/create}" th:object="${problemForm}" method="post">
+                <div class="mb-3">
+                    <label for="problemId" class="form-label">ID:</label>
+                    <input type="text" id="problemId" name="problemId" th:field="*{problemId}" class="form-control"/>
+                    <div th:if="${#fields.hasErrors('problemId')}" class="text-danger" th:errors="*{problemId}">error!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="title" class="form-label">タイトル:</label>
+                    <input type="text" id="title" name="title" th:field="*{title}" class="form-control"/>
+                    <div th:if="${#fields.hasErrors('title')}" class="text-danger" th:errors="*{title}">error!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="level" class="form-label">難易度:</label>
+                    <input type="text" id="level" name="level" th:field="*{level}" class="form-control"/>
+                    <div th:if="${#fields.hasErrors('level')}" class="text-danger" th:errors="*{level}">error!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="point" class="form-label">配点:</label>
+                    <input type="text" id="point" name="point" th:field="*{point}" class="form-control"/>
+                    <div th:if="${#fields.hasErrors('point')}" class="text-danger" th:errors="*{point}">error!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="problemStatement" class="form-label">問題文:</label>
+                    <textarea id="problemStatement" name="problemStatement" th:field="*{problemStatement}" placeholder="MarkDown形式で入力" class="form-control" rows="10"></textarea>
+                    <div th:if="${#fields.hasErrors('problemStatement')}" class="text-danger" th:errors="*{problemStatement}">error!</div>
+                </div>
+                <div class="mb-3">
+                    <label for="answer" class="form-label">解答:</label>
+                    <input type="text" id="answer" name="answer" th:field="*{answer}" class="form-control"/>
+                    <div th:if="${#fields.hasErrors('answer')}" class="text-danger" th:errors="*{answer}">error!</div>
+                </div>
+                <div class="mb-3">
+                    <input type="submit" value="作成" class="btn btn-primary"/>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
