@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import jp.te4a.spring.boot.online_questions.form.SubmissionForm;
-import jp.te4a.spring.boot.online_questions.service.ProblemsServiceI;
+import jp.te4a.spring.boot.online_questions.service.ProblemsService;
 
 
 @Controller
 @RequestMapping(path="/problems")
 public class ProblemsController {
     @Autowired
-    ProblemsServiceI problemsService;
+    ProblemsService problemsService;
 
     @ModelAttribute
     SubmissionForm setUpForm() {
@@ -28,12 +28,14 @@ public class ProblemsController {
 
     @GetMapping
     public String index(Model model) {
+        model.addAttribute("problems", problemsService.findAll()); 
         return "problems/index";
     }
     
     @GetMapping(path="/{problemId}")
     public String problem(Model model, @PathVariable String problemId) {
-        return "problems/" + problemId;
+        model.addAttribute("problem", problemsService.findOne(problemId));
+        return "problems/problem";
     }
 
     @PostMapping(path="/{problemId}/submit")
@@ -48,5 +50,4 @@ public class ProblemsController {
             return "redirect:/problems/" + problemId + "?wa";
         }
     }
-
 }

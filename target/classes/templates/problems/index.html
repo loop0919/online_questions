@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../static/css/style.css" th:href="@{/css/style.css}"/>
-    <link rel="stylesheet" type="text/css"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/bootstrap-theme.min.css}"/>
     <title>問題一覧 - Online Problems</title>
+    <!-- MathJax -->
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
 </head>
 <body>
-    <header>
-        <h2>Online Problems</h2>
-    </header>
+    <header th:replace="~{components/header :: header}"></header>
     <main>
-        <div class="container">
+        <div class="container mt-5 mb-5">
+            <a th:href="@{/admin/problem}" class="btn btn-primary mb-3">問題作成</a>
             <h1>問題一覧</h1>
-            <button onclick="location.href='/problems/problem_a'" >
-                <h2>A - The First Problem</h2>
-                <p>Level: ★☆☆☆☆</p>
-            </button>
-            <button onclick="location.href='/problems/problem_b'" >
-                <h2>B - 1 + 2 + ... + 100</h2>
-                <p>Level: ★★☆☆☆</p>
-            </button>
+            <hr>
+            <div class="problem-list" th:each="problem: ${problems}">
+                <div class="problem-item p-10 mb-10 border rounded">
+                    <a class="text-decoration-none mb-2" th:href="@{/problems/{problemId}(problemId=${problem.problemId})}">
+                        <h2 th:text="${problem.title}">A - The First Problem</h2>
+                    </a>
+                    <p>points: <strong th:text="${problem.point}">50</strong>点</p>
+                </div>
+            </div>
         </div>
     </main>
 </body>

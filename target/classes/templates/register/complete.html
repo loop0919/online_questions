@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../static/css/style.css" th:href="@{/css/style.css}"/>
-    <link rel="stylesheet" type="text/css"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/bootstrap-theme.min.css}"/>
-    <title>ユーザー登録 - Online Problems</title>
+    <title>登録完了 - Online Problems</title>
+    <!-- MathJax -->
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
 </head>
 <body>
-    <header>
-        <h2>Online Problems</h2>
-    </header>
+    <header th:replace="~{components/header :: header}"></header>
     <main>
-        <div class="container">
+        <div class="container mt-5 mb-5">
             <h2>ユーザー登録完了</h2>
             <p>ユーザー登録が完了しました！</p>
-            <p><a th:href={/loginForm}>ログインフォーム</a>からログインしてください。</p>
+            <p><a th:href=@{/loginForm}>ログインフォーム</a>からログインしてください。</p>
         </div>
     </main>
 </body>
