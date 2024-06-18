@@ -20,6 +20,9 @@ public class ProblemsServiceImpl implements ProblemsService{
     @Autowired
     ProblemsRepository problemsRepository;
 
+    @Autowired
+    Html html;
+
     public boolean checkCorrectAnswer(SubmissionForm submissionForm) {
         ProblemBean problemBean = problemsRepository.findById(submissionForm.getProblemId()).orElseThrow();
         return problemBean.getAnswer().equals(submissionForm.getAnswer());
@@ -33,13 +36,24 @@ public class ProblemsServiceImpl implements ProblemsService{
         return problemForm;
     }
 
+    public void deleteById(String problemId) {
+        problemsRepository.deleteById(problemId);
+    }
+
+    public ProblemForm update(ProblemForm problemForm) {
+        var problemBean = new ProblemBean();
+
+        BeanUtils.copyProperties(problemForm, problemBean);
+        problemsRepository.save(problemBean);
+        return problemForm;
+    }
+
     public List<ProblemForm> findAll() {
         List<ProblemForm> formList = problemsRepository.findAll()
                 .stream()
                 .map(bean -> {
                     var form = new ProblemForm();
                     BeanUtils.copyProperties(bean, form);
-                    form.setProblemStatement(Html.toHtml(bean.getProblemStatement()));
                     return form;
                 })
                 .collect(Collectors.toList());
@@ -47,13 +61,24 @@ public class ProblemsServiceImpl implements ProblemsService{
         return formList;
     }
 
-    public ProblemForm findOne(String problemId) throws NoSuchElementException {
+public ProblemForm findOne(String problemId) throws NoSuchElementException {
         var problemBean = problemsRepository.findById(problemId).orElseThrow(NoSuchElementException::new);
         var problemForm = new ProblemForm();
         BeanUtils.copyProperties(problemBean, problemForm);
-        problemForm.setProblemStatement(Html.toHtml(problemBean.getProblemStatement()));
+        return problemForm;
+}
+
+public ProblemForm findOneEncoded(String problemId) throws NoSuchElementException {
+        var problemBean = problemsRepository.findById(problemId).orElseThrow(NoSuchElementException::new);
+        var problemForm = new ProblemForm();
+        BeanUtils.copyProperties(problemBean, problemForm);
+        problemForm.setProblemStatement(html
+            .toHtml(problemBean
+                .getProblemStatement()
+                .replace("\\", "\\\\")
+            )
+        );
 
         return problemForm;
     }
-
 }

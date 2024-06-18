@@ -29,6 +29,12 @@ header {
 }
 
 header h2 {
+    padding: 0 30px 15px 30px; /* 左右のパディングを追加 */
+    margin-left: 45px;
+    height: 60px; /* ヘッダーと同じ高さ */
+    line-height: 60px; /* 垂直中央揃え */
+    text-align: left;
+    display: inline-block;
     font-size: 20px;
     padding-left: 30px;
 }
@@ -91,4 +97,23 @@ li {
 
 .problem-item {
     background-color: #f9f9f9;
+}
+
+/* Nav styling */
+nav {
+    background-color: #223B53;
+    padding: 10px; /* パディングを追加 */
+    margin-left: 30px;
+    align-items: end;
+}
+
+nav a {
+    color: #ffffff;
+    padding: 10px 15px; /* パディングを追加 */
+    text-decoration: none; /* アンダーバーを消す */
+    display: inline-block; /* インラインブロック要素にする */
+}
+
+nav a:not(:last-child) {
+    border-right: 1px solid #B0B0B0; /* 灰色の仕切り線 */
 }

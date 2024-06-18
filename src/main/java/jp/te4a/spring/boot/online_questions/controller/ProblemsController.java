@@ -1,5 +1,6 @@
 package jp.te4a.spring.boot.online_questions.controller;
 
+import org.aspectj.lang.reflect.NoSuchAdviceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,8 +35,17 @@ public class ProblemsController {
     
     @GetMapping(path="/{problemId}")
     public String problem(Model model, @PathVariable String problemId) {
-        model.addAttribute("problem", problemsService.findOne(problemId));
+        try {
+            model.addAttribute("problem", problemsService.findOneEncoded(problemId));
+        } catch (NoSuchAdviceException e) {
+            e.printStackTrace();
+        }
         return "problems/problem";
+    }
+
+    @GetMapping(path="/submissions")
+    public String problem(Model model) {
+        return "problems/submissions";
     }
 
     @PostMapping(path="/{problemId}/submit")
