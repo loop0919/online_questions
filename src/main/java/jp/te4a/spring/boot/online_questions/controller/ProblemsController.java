@@ -43,6 +43,11 @@ public class ProblemsController {
         return "problems/problem";
     }
 
+    @GetMapping(path="/submissions")
+    public String problem(Model model) {
+        return "problems/submissions";
+    }
+
     @PostMapping(path="/{problemId}/submit")
     public String submit(Model model, @PathVariable String problemId, @Validated SubmissionForm submissionForm, BindingResult result) {
         if (result.hasErrors()) {

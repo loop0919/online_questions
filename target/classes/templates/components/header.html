@@ -10,11 +10,17 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <a th:href="@{/problems}" class="custom-link">
-                <h2 class="text-primary">Online Problems</h2>
-            </a>
+        <div>
+            <h2>Online Problems</h2>
         </div>
+        <nav class="navbar navbar-default">
+            <a th:href="@{/problems}">
+                問題一覧
+            </a>
+            <a th:href="@{/problems/submissions}">
+                提出一覧
+            </a>
+        </nav>
     </header>
 </body>
 </html>
