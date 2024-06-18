@@ -9,7 +9,7 @@ import com.vladsch.flexmark.util.data.MutableDataSet;
 
 @Component
 public class Html {
-    public static String toHtml(String markdown) {
+    public String toHtml(String markdown) {
         MutableDataSet options = new MutableDataSet();
         Parser parser = Parser.builder(options).build();
         HtmlRenderer renderer = HtmlRenderer.builder(options).build();

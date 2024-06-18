@@ -13,6 +13,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SubmissionForm {
     @NotNull
+    @NotBlank
+    @NotEmpty
     private String problemId;
 
     @NotNull

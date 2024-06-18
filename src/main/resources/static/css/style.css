@@ -73,6 +73,20 @@ h1, h2 {
     font-weight: bold;
 }
 
+.custom-link {
+    display: block; /* ブロック要素にして全体をカバー */
+    color: inherit;
+    text-decoration: none; /* アンダーバーを消す */
+    padding: 15px 30px 15px 30px; /* 左右のパディングを追加 */
+    height: 60px; /* ヘッダーと同じ高さ */
+    line-height: 60px; /* 垂直中央揃え */
+    text-align: left;
+}
+
+.custom-link:hover {
+    background-color: #162838; /* ホバー時の色変更 */
+}
+
 p {
     font-size: 18px;
 }

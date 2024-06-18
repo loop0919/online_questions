@@ -21,11 +21,12 @@
             <h1>問題一覧</h1>
             <hr>
             <div class="problem-list" th:each="problem: ${problems}">
-                <div class="problem-item p-10 mb-10 border rounded">
-                    <a class="text-decoration-none mb-2" th:href="@{/problems/{problemId}(problemId=${problem.problemId})}">
-                        <h2 th:text="${problem.title}">A - The First Problem</h2>
+                <div class="problem-item p-10 m-10 border rounded">
+                    <h3 th:text="${problem.title}" class="p-0">A - The First Problem</h3>
+                    <p>得点: <strong th:text="${problem.point}" class="p-0">50</strong>点</p>
+                    <a class="btn btn-primary mb-3" th:href="@{/problems/{problemId}(problemId=${problem.problemId})}">
+                        問題ページ
                     </a>
-                    <p>points: <strong th:text="${problem.point}">50</strong>点</p>
                 </div>
             </div>
         </div>
