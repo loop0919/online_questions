@@ -22,3 +22,5 @@
 /home/loop/school/online_questions/src/main/java/jp/te4a/spring/boot/online_questions/service/impl/LoginUserDetailsServiceImpl.java
 /home/loop/school/online_questions/src/main/java/jp/te4a/spring/boot/online_questions/service/impl/ProblemsServiceImpl.java
 /home/loop/school/online_questions/src/main/java/jp/te4a/spring/boot/online_questions/service/impl/UserServiceImpl.java
+/home/loop/school/online_questions/src/main/java/jp/te4a/spring/boot/online_questions/validator/AnswerValidator.java
+/home/loop/school/online_questions/src/main/java/jp/te4a/spring/boot/online_questions/validator/ValidAnswer.java
