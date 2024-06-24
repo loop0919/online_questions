@@ -49,7 +49,7 @@ public class ProblemsController {
     }
 
     @PostMapping(path="/{problemId}/submit")
-    public String submit(Model model, @PathVariable String problemId, @Validated SubmissionForm submissionForm, BindingResult result) {
+    public String submit(@Validated SubmissionForm submissionForm, BindingResult result,@PathVariable String problemId, Model model) {
         if (result.hasErrors()) {
             return "redirect:/problems/" + problemId + "?re";
         }

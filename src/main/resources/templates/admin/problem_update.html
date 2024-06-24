@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../../static/css/style.css" th:href="@{/css/style.css}"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/bootstrap-theme.min.css}"/>
-    <title>問題作成 - Online Problems</title>
+    <title>問題編集 - Online Problems</title>
     <!-- MathJax -->
     <script type="text/javascript" th:inline="none">
         window.MathJax = {
@@ -27,7 +27,7 @@
     <header th:replace="~{components/header :: header}"></header>
     <main>
         <div class="container mt-5 mb-5">
-            <h1>問題作成</h1>
+            <h1>問題編集</h1>
             <form th:action="@{/admin/problem/{problemId}/update(problemId=${problemForm.problemId})}" th:object="${problemForm}" method="post">
                 <div class="mb-3">
                     <label for="problemId" class="form-label">ID:</label>
@@ -64,12 +64,12 @@
                     <input type="text" id="answer" name="answer" th:field="*{answer}" class="form-control"/>
                     <div th:if="${#fields.hasErrors('answer')}" class="text-danger" th:errors="*{answer}">error!</div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 d-flex justify-content-end">
                     <input type="submit" value="更新" class="btn btn-primary"/>
                 </div>
             </form>
             <form th:action="@{/admin/problem/{problemId}/delete(problemId=${problemForm.problemId})}" th:object="${problemForm}" method="post">
-                <div class="mb-3">
+                <div class="mb-3 d-flex justify-content-end">
                     <input type="submit" value="削除" class="btn btn-danger"/>
                 </div>
             </form>
