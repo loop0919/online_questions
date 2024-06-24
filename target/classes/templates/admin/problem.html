@@ -64,7 +64,7 @@
                     <input type="text" id="answer" name="answer" th:field="*{answer}" class="form-control"/>
                     <div th:if="${#fields.hasErrors('answer')}" class="text-danger" th:errors="*{answer}">error!</div>
                 </div>
-                <div class="mb-3">
+                <div class="mb-3 d-flex justify-content-end">
                     <input type="submit" value="作成" class="btn btn-primary"/>
                 </div>
             </form>

@@ -17,16 +17,20 @@
     <header th:replace="~{components/header :: header}"></header>
     <main>
         <div class="container mt-5 mb-5">
-            <a th:href="@{/admin/problem}" class="btn btn-primary mb-3">問題作成</a>
-            <h1>問題一覧</h1>
+            <div class="d-flex justify-content-between">
+                <h1>問題一覧</h1>
+                <a th:href="@{/admin/problem}" class="btn btn-primary mb-3 me-3">問題作成</a>
+            </div>
             <hr>
             <div class="problem-list" th:each="problem: ${problems}">
                 <div class="problem-item p-10 m-10 border rounded">
-                    <h3 th:text="${problem.title}" class="p-0">A - The First Problem</h3>
-                    <p>得点: <strong th:text="${problem.point}" class="p-0">50</strong>点</p>
-                    <a class="btn btn-primary mb-3" th:href="@{/problems/{problemId}(problemId=${problem.problemId})}">
-                        問題ページ
-                    </a>
+                    <h3 th:text="${problem.title}" class="m-3 p-0">A - The First Problem</h3>
+                    <p class="m-3">得点: <strong th:text="${problem.point}" class="p-0">50</strong>点</p>
+                    <div class="d-flex justify-content-end mr-5">
+                        <a class="btn btn-primary m-3" th:href="@{/problems/{problemId}(problemId=${problem.problemId})}">
+                            問題ページ
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
